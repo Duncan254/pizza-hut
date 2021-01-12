@@ -59,9 +59,33 @@ cartInfo.addEventListener("click",function(){
 const cart = document.getElementById('cart');
 const total = document.querySelector('.cart-total-container ');
 cart.insertBefore(cartItem,total);
-alert("item has been added")
+alert("item has been added");
+showTotals();
 
-        }
+        } 
         });
     });
+
+    function showTotals(){
+        const total = [];
+        const items =  document.querySelectorAll (".cart-item-price");
+        
+        items.forEach(function(item){
+            total.push(parseFloat(item.textContent));
+        });
+
+
+        const totalMoney = total.reduce(function(total,item){
+            total += item;
+            return total;
+
+        },0);
+        const finalMoney =totalMoney.toFixed(2);
+
+        document.getElementById("cart-total").textContent = finalMoney;
+        document.querySelector(".item-total").textContent = finalMoney;
+        document.getElementById("item-count").textContent = total.length;
+    }
+
+
 })();
