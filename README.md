@@ -1,2 +1,2 @@
-# js-cart-setup
+# js-order item project
 ADD ITEMS TO CART JAVASCRIPT PROJECT
