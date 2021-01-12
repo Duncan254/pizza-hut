@@ -19,6 +19,13 @@ cartInfo.addEventListener("click",function(){
             if(event.target.parentElement.classList.contains ("store-item-icon")){
 
                 let fullpath=event.target.parentElement.previousElementSibling.src;
+                let pos = fullpath.indexOf('img') +3;
+                let partPath = fullpath.slice(pos);
+
+                const item = {};
+                item.img = `img-cart${partPath}`;
+
+                let name = event.target.parentElement.parentElement.nextElemetSibling.children[0].children[0].textCotent;
             }
         });
     });
