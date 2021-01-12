@@ -42,6 +42,7 @@ body {
   cursor: pointer;
 }
 
+
 .cart-info {
   border: 0.1rem solid var(--mainBlack);
   color: var(--mainBlack);
@@ -86,6 +87,10 @@ body {
 }
 /* endo of banner */
 /* cart  */
+.cart img {
+  height: 50px;
+  width:50px ;
+}
 .cart {
   position: absolute;
   min-height: 10rem;
@@ -93,7 +98,7 @@ body {
   top: 0;
   right: 0;
   transition: all 0.3s ease-in-out;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.9);
   width: 0;
   overflow: hidden;
 }

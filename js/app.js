@@ -12,21 +12,56 @@ cartInfo.addEventListener("click",function(){
 
 (function(){
 
-    const cartBtn = document.querySelectorAll('.store-item-icon');
+    const cartBtn = document.querySelectorAll(".store-item-icon");
     cartBtn.forEach(function(btn){
 
-        btn.addEventListener('click', function(event){
+        btn.addEventListener("click", function(event){
             if(event.target.parentElement.classList.contains ("store-item-icon")){
 
-                let fullpath=event.target.parentElement.previousElementSibling.src;
-                let pos = fullpath.indexOf('img') +3;
-                let partPath = fullpath.slice(pos);
+                let fullPath=event.target.parentElement.previousElementSibling.src;
+                let pos = fullPath.indexOf("img") +3;
+                let partPath = fullPath.slice(pos);
 
                 const item = {};
                 item.img = `img-cart${partPath}`;
 
-                let name = event.target.parentElement.parentElement.nextElemetSibling.children[0].children[0].textCotent;
-            }
+                let name = event.target.parentElement.parentElement.nextElementSibling.children[0].children[0].textContent;
+                item.name =name;
+
+                let price = event.target.parentElement.parentElement.nextElementSibling.children[0].children[1].textContent;
+                 let finalPrice = price.slice(1).trim();
+
+                 item.price = finalPrice;
+
+      const cartItem = document.createElement("div");
+      cartItem.classList.add(
+          "cart-item",
+          "d-flex",
+          "justify-content-between",
+          "text-capitalize",
+          "my-3"
+          );
+
+      cartItem.innerHTML= `
+        <img src="${item.   img}" class="img-fluid rounded-circle" id="item-img" alt="">
+        <div class="item-text">
+
+          <p id="cart-item-title" class="font-weight-bold mb-0">${item.name}</p>
+          <span>$</span>
+          <span id="cart-item-price" class="cart-item-price" class="mb-0">${item.price}</span>
+        </div>
+        <a href="#" id='cart-item-remove' class="cart-item-remove">
+          <i class="fas fa-trash"></i>
+        </a>
+      </div>
+   `;
+
+const cart = document.getElementById('cart');
+const total = document.querySelector('.cart-total-container ');
+cart.insertBefore(cartItem,total);
+alert("item has been added")
+
+        }
         });
     });
 })();
