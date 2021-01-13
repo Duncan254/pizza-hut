@@ -56,6 +56,9 @@ cartInfo.addEventListener("click",function(){
       </div>
    `;
 
+
+
+
 const cart = document.getElementById('cart');
 const total = document.querySelector('.cart-total-container ');
 cart.insertBefore(cartItem,total);

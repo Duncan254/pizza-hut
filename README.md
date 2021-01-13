@@ -8,6 +8,8 @@ as you go through the website checkout the cool css animation used together with
 ## link
 the link to the project is https://github.com/Duncan254/pizza-hut.git
 
+hover over the images of the pizza to get the order button.
+
 to use the site simply open the pizza hut folder and run the index.html file on your browser. navigate thruogh the links and check out the buttons .. and have fun while you are at it
 
 
